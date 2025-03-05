@@ -27,8 +27,9 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--background-color);
-    padding: 0px 200px 0px 200px;
-    transition: 0.5s;
+    padding: 0 200px;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
     box-shadow: 0 8px 11px rgb(14 55 54 / 15%);
   }
   
@@ -41,7 +42,6 @@
     width: 70px;
     height: 100%;
     background-color: transparent;
-    background: none;
   }
   
   .navbar {
@@ -60,17 +60,18 @@
   
   .navbar a:hover {
     background-color: aliceblue;
-    border-radius: 5rem;
+    border-radius: 50px;
     transition: background 0.5s;
+    -webkit-transition: background 0.5s;
   }
   
+  /* Slides */
   .slides {
     margin: auto;
     position: relative;
     margin-top: 90px;
-    margin-bottom: 0px;
     height: 55vh;
-    width: 100vh;
+    width: 100%;
     overflow: hidden;
     box-shadow: 0 8px 11px rgb(14 55 54 / 15%);
     border-radius: 10px;
@@ -80,11 +81,11 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    transition: 2.5s;
+    transition: all 2.5s;
+    -webkit-transition: all 2.5s;
   }
   
   /* Dots */
-  
   .dot-container {
     text-align: center;
     padding: 20px;
@@ -98,22 +99,21 @@
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
+    -webkit-transition: background-color 0.6s ease;
     cursor: pointer;
   }
   
   .dot:hover {
-    cursor: pointer;
     background-color: #333;
   }
   
   /* Categories */
-  
   .btn {
     padding: 0.6rem 1rem;
     background: aliceblue;
     color: #1d1d1d;
     font-weight: 400;
-    border-radius: 5rem;
+    border-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -124,7 +124,7 @@
   .btn .bx {
     padding: 4px;
     background: white;
-    border-radius: 5rem;
+    border-radius: 50px;
     color: #1d1d1d;
     font-size: 20px;
     margin: auto;
@@ -146,9 +146,8 @@
   }
   
   .categories {
-    max-width: 115vh;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 1150px;
+    margin: 0 auto;
     padding: 10px;
   }
   
@@ -161,7 +160,7 @@
     padding: 20px;
   }
   
-  /* product cards */
+  /* Product Cards */
   .product-card {
     background-color: var(--background-color);
     border: 1px solid #ddd;
@@ -192,10 +191,12 @@
     font-size: 18px;
     margin: 10px 0;
   }
+  
   .price {
     font-size: 18px;
     color: #333;
   }
+  
   .old-price {
     text-decoration: line-through;
     color: #888;
@@ -218,6 +219,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-size: 20px;
@@ -229,6 +231,7 @@
   .out-of-stock .stock-out {
     display: block;
   }
+  
   .out-of-stock .price,
   .out-of-stock .save-tag,
   .out-of-stock .old-price {
@@ -249,12 +252,15 @@
     height: 4px;
     width: 100%;
     background-color: var(--text-color);
-    transition: 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
     transform-origin: center;
+    -webkit-transform-origin: center;
   }
   
   .hamburger.active .bar:nth-child(1) {
     transform: rotate(-45deg) translate(-14.2px, 0px);
+    -webkit-transform: rotate(-45deg) translate(-14.2px, 0px);
   }
   
   .hamburger.active .bar:nth-child(2) {
@@ -263,27 +269,19 @@
   
   .hamburger.active .bar:nth-child(3) {
     transform: rotate(45deg) translate(-14px, 0px);
+    -webkit-transform: rotate(45deg) translate(-14px, 0px);
   }
   
+  /* Responsive styles */
   @media (max-width: 768px) {
     header {
       height: 60px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: var(--background-color);
-      padding: 0px 30px 0px 30px;
-      transition: 0.5s;
-      box-shadow: 0 8px 11px rgb(14 55 54 / 15%);
+      padding: 0 30px;
     }
   
     .LOGO img {
-      padding-top: 0px;
+      padding-top: 0;
       width: 60px;
-      height: 100%;
-      background-color: transparent;
-      background: none;
     }
   
     .slides {
@@ -317,6 +315,7 @@
       background-color: #fff;
       padding-top: 20px;
       transition: top 1s ease-in-out;
+      -webkit-transition: top 1s ease-in-out;
       z-index: 1010;
       justify-content: flex-start;
       text-align: center;
@@ -324,13 +323,9 @@
     }
   
     .navbar.active {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
       top: 0;
-      width: 100%;
       background-color: var(--background-color);
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
       padding: 20px;
       height: 100%;
       z-index: 900;
@@ -342,6 +337,7 @@
     .hamburger {
       display: flex;
     }
+  
     .navbar a {
       display: block;
       margin: 10px;
@@ -358,14 +354,12 @@
     }
   }
   
-  
   footer {
     background-color: #00001a;
     color: #fff;
     padding: 5px;
     text-align: center;
     font-family: Arial, sans-serif;
-    bottom: 0;
     position: relative;
   }
   
@@ -399,21 +393,23 @@
     color: gray;
   }
   
-  #user-info p,#user-info {
+  #user-info p,
+  #user-info {
     padding: 12px 15px;
     background-color: var(--text-color);
     color: var(--background-color);
   }
   
-  #user-info a{
+  #user-info a {
     padding: 12px 15px;
     background-color: var(--text-color);
     color: var(--background-color);
   }
   
-  #user-info a:hover{
+  #user-info a:hover {
     color: #ff3b30;
     transition: 0.5s;
+    -webkit-transition: 0.5s;
   }
   
   .user-menu {
@@ -454,5 +450,3 @@
   #logout-button:hover {
     background: #cc3228;
   }
-  
-  
